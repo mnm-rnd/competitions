@@ -41,12 +41,30 @@ For ease of use and understandable flow of code, we have compiled our code into 
 First, you'll be required to make sure that the folder structure is set as
 
 ```
---airqo-challenge-MLOD/
-    - mlod.zip
+--airqo-ugandan-air-quality-forecast-challenge/
+    - mlod
     - requirements.txt
+    - plot.png
     - README.md (this file)
     - FinalNotebook.ipynb
 ```
+
+### To be able to use our code
+
+Make sure that you first zip the `mlod` folder, the contents are arranged in this order.
+```
+- mlod/
+    - mlod/ 
+      + models/
+      + pipelines/
+      - __init__.py
+      - configurations.py
+      - data_utils.py
+      - file_utils.py
+      - preprocessors.py
+```
+
+If thats the case, then 
 
 ### If you are running on your local machine,
 
@@ -110,4 +128,8 @@ that we used in achieving our score. These models are wrapped in the classes:
 These classes are strategically called in the notebook file.
 Details about these classes are explained in our `mlod` package.
 
-##### Now that you know what's up, run the notebook :)
+##### Now that you know what's up, run the notebook
+
+### Issues with our code:
+
+Any issues regarding notebook running failure or our code, feel free to add an issue. Not that we'll respond to them, but add them nonetheless ;)
