@@ -9,7 +9,11 @@ Many relations involving serial data, such as the sum of the first n-terms of a 
 The idx features help model the linear patterns of the data and since these patterns exhibit a periodic trend, we extract more indices from series at various intervals. Each of the idx features are then encoded to acquire a better representation of the harmonic series. Together, the idx features and their encodings help the base model capture the trend and seasonality of the data.
 
 ## Lag Features
-Looking at the plots for each of the original meteorological variables and the target, it can be observed that other than precipitation, most of the variables illustrate a trend in the five days leading up to the point when the air quality reading is taken. These variables are therefore shifted to allow for the base model to capture this trend from past and future values of each variable. 
+Looking at the plots for each of the original meteorological variables and the target, it can be observed that other than precipitation, most of the variables illustrate a trend in the five days leading up to the point when the air quality reading is taken. 
+
+![alt text](plot.png)
+
+These variables are therefore shifted to allow for the base model to capture this trend from past and future values of each variable. 
 
 
 It should be noted that all features based on time, such as the indices from various periods and the lag features, are extracted using the number of observations and not any date-time index.
