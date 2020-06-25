@@ -27,7 +27,7 @@ The base model is first trained using a 3-fold cross validation to generate out-
 The data used in the meta-learner places each variable’s value in the same row acting as one complete series with each lag value included. The averaged out-of-fold and test set predictions from the base model are also added into the train and test set, respectively, so that the meta learner can learn a better representation of the relationship between the target and predictors.
 
 The meta-learner is trained using a 50-fold cross validation to determine the optimal number of iterations and the model is then trained on the full set and used to make predictions on the test set.
-mlod Package 
+## mlod Package 
 
 For ease of use and understandable flow of code, we have compiled our code into an `mlod` package and included the `FinalNotebook.ipynb` with instructions below on how to run the code.
 
