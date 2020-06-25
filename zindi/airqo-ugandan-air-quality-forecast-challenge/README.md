@@ -31,7 +31,8 @@ The base model is first trained using a 3-fold cross validation to generate out-
 The data used in the meta-learner places each variable’s value in the same row acting as one complete series with each lag value included. The averaged out-of-fold and test set predictions from the base model are also added into the train and test set, respectively, so that the meta learner can learn a better representation of the relationship between the target and predictors.
 
 The meta-learner is trained using a 50-fold cross validation to determine the optimal number of iterations and the model is then trained on the full set and used to make predictions on the test set.
-## mlod Package 
+
+## `mlod` Package 
 
 For ease of use and understandable flow of code, we have compiled our code into an `mlod` package and included the `FinalNotebook.ipynb` with instructions below on how to run the code.
 
@@ -51,7 +52,7 @@ First, you'll be required to make sure that the folder structure is set as
 
 ... and if the file structure is set in the stated manner, the rest of the instructions together with scripts used to initiate the project are included within the first couple of cells of the `FinalNotebook.ipynb` file. 
 
-Simply run the `jupyter lab` or `jupyter notebook` within this directory space from the terminal / anaconda prompt and you can get started. Be sure to have installed `anaconda` before hand
+Simply run the `jupyter notebook` within this directory space from the terminal / anaconda prompt and you can get started. Be sure to have installed `anaconda` before hand
 
 ### If you are running on Colab,
 
@@ -64,6 +65,7 @@ After placing the files in the specified locations, navigate to the first couple
 At this point, you have already set up the requirements needed to move along with the model preprocessing and training.
 
 ## You are set!
+
 Now that you have set up the needed code and packages, you'll have to save the original `Train.csv` and `Test.csv` inside a newly created `data` folder, otherwise, the code wont be able to process the files.
 
 There after, you can begin running the other cells within the notebook one at a time, feel free to read the code within our package while you are at it. They include documentation for the most part
@@ -91,8 +93,8 @@ These are classes that are built to preprocess the data. This should convert the
 
 For our ensemble model, we preprocessed our original data in 2 different ways, for the 2 different models as reflected in the:
 
- - `MlodPreProcessor` - originally devised by our team.
- - `AirQoPreProcessor` - adapted from an approach in the Zindi Discussions. See [Zindi Discussion #1116](https://zindi.africa/competitions/airqo-ugandan-air-quality-forecast-challenge/discussions/1116).
+ - `MlodPreProcessor` - originally devised by us.
+ - `AirQoPreProcessor` - an alternative version modified from an approach in the Zindi Discussions. See [Zindi Discussion #1116](https://zindi.africa/competitions/airqo-ugandan-air-quality-forecast-challenge/discussions/1116).
 
 ### `Config` and other constants
 
@@ -107,3 +109,5 @@ that we used in achieving our score. These models are wrapped in the classes:
 
 These classes are strategically called in the notebook file.
 Details about these classes are explained in our `mlod` package.
+
+##### Now that you know what's up, run the notebook :)
