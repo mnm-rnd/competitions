@@ -1,14 +1,15 @@
 # AirQo Ugandan Air Quality Forecast Challenge
 
 ## Approach
+
 Our solution treats the problem as a pseudo time-series where the algorithm learns the temporal nature of the data without any timestamp from which to extract time features. For this purpose, we utilize the idx features derived from the indices (positions) of the data points in their respective 5-day series using a stacked model to better learn the relationship between the meteorological variables and target.
 
-## idx Features
+### idx Features
 Many relations involving serial data, such as the sum of the first n-terms of a series, are usually a function of n. Without any date-time index, we treat the weather recordings as ordinary series. Since the objective of this challenge is to learn the relationship between air quality and the meteorological variables—a mere function of a (time) series—we include the indices of the observations within each series (ID) as features for the base model. 
 
 The idx features help model the linear patterns of the data and since these patterns exhibit a periodic trend, we extract more indices from series at various intervals. Each of the idx features are then encoded to acquire a better representation of the harmonic series. Together, the idx features and their encodings help the base model capture the trend and seasonality of the data.
 
-## Lag Features
+### Lag Features
 Looking at the plots for each of the original meteorological variables and the target, it can be observed that other than precipitation, most of the variables illustrate a trend in the five days leading up to the point when the air quality reading is taken. 
 
 ![alt text](plot.png)
@@ -18,12 +19,12 @@ These variables are therefore shifted to allow for the base model to capture thi
 
 It should be noted that all features based on time, such as the indices from various periods and the lag features, are extracted using the number of observations and not any date-time index.
 
-## Further Feature Engineering
+### Further Feature Engineering
 The wind variable is converted from its polar representation (wind_spd and wind_dir) to cartesian components (u and v) to allow for a more accurate representation of the data. The temperature variable, temp, is also used to create the eqn feature representing the [clausius-clapeyron relation](https://www.theweatherprediction.com/habyhints2/646/)—relating saturated vapor-pressure to temperature.
 
 The data used in the meta learner also includes aggregates, such as the mean and standard deviation, of each of the weather variables for each series(ID). This is done so as to enable the meta learner to capture information from the data and acquire a better representation. 
 
-## Model Training and Prediction 
+### Model Training and Prediction 
 The algorithm is a stacked ensemble using a Light Gradient Boost Model (LGBM) as the base model and a CatBoost model as the meta-learner. Each of the 121 observations per ID are treated as separate series where the base model learns 121 different interactions of the variables for the same target value.
 
 The base model is first trained using a 3-fold cross validation to generate out-of-fold predictions and identify optimal number of boosting rounds. It is then trained on the full train set and it is this model that is used to make predictions on the test set. Both out-of-fold and test predictions are made on each of the 121 series and averaged to give the mean value of the target.
@@ -36,7 +37,7 @@ The meta-learner is trained using a 50-fold cross validation to determine the op
 
 For ease of use and understandable flow of code, we have compiled our code into an `mlod` package and included the `FinalNotebook.ipynb` with instructions below on how to run the code.
 
-## Getting started
+### Getting started
 
 First, you'll be required to make sure that the folder structure is set as
 
@@ -82,7 +83,7 @@ After placing the files in the specified locations, navigate to the first couple
 
 At this point, you have already set up the requirements needed to move along with the model preprocessing and training.
 
-## You are set!
+### You are set!
 
 Now that you have set up the needed code and packages, you'll have to save the original `Train.csv` and `Test.csv` inside a newly created `data` folder, otherwise, the code wont be able to process the files.
 
@@ -130,6 +131,6 @@ Details about these classes are explained in our `mlod` package.
 
 ##### Now that you know what's up, run the notebook
 
-### Issues with our code:
+## Issues with our code:
 
-Any issues regarding notebook running failure or our code, feel free to add an issue. Not that we'll respond to them, but add them nonetheless ;)
+Any issues regarding notebook running failure or our code, feel free to add an issue to this github repo :)
