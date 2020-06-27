@@ -35,11 +35,11 @@ The meta-learner is trained using a 50-fold cross validation to determine the op
 
 ## `mlod` Package 
 
-For ease of use and understandable flow of code, we have compiled our code into an `mlod` package and included the `FinalNotebook.ipynb` with instructions below on how to run the code.
+For ease of use and logical flow, we have compiled our code into an `mlod` package and included the `FinalNotebook.ipynb` file along with instructions below on how to run the code.
 
 ### Getting started
 
-First, you'll be required to make sure that the folder structure is set as
+First, be sure that the folder structure is set as
 
 ```
 --airqo-ugandan-air-quality-forecast-challenge/
@@ -50,19 +50,19 @@ First, you'll be required to make sure that the folder structure is set as
     - FinalNotebook.ipynb
 ```
 
-### If you are running on your local machine,
+### If running on your local machine,
 
 ... and if the file structure is set in the stated manner, the rest of the instructions together with scripts used to initiate the project are included within the first couple of cells of the `FinalNotebook.ipynb` file. 
 
 Simply run the `jupyter notebook` within this directory space from the terminal / anaconda prompt and you can get started. Be sure to have installed `anaconda` before hand
 
-### If you are running on Colab,
+### If running on Colab,
 
 Either upload the FinalNotebook.ipynb into Colab then connect to a runtime or Click on the "Open on Colab" badge. Then run the top most cell, which contains the scripts that sets up the needed by the notebook (except the data files, `Train.csv` and `Test.csv`)
 
 -------------
 
-After placing the files in the specified locations, navigate to the first couple of cells under **"Run these cells only once during a session"** section and run the cells.
+After placing the files in the specified locations, run the cells under **"Run these cells only once during a session"** section.
 
 At this point, you have already set up the requirements needed to move along with the model preprocessing and training.
 
@@ -80,9 +80,9 @@ There after, you can begin running the other cells within the notebook one at a 
 
 ## Understanding `mlod`
 
-The information to follow tries to explain the different parts of the `mlod`
+The following information tries to explain the different parts of the `mlod` package
 
-The `mlod` is built with certain things in mind:
+The package is built with certain things in mind:
 1. Building a **pipeline (work flow)** that can be **easily understood**.
 3. **Modular code** that can allow use to change things **easily**, with **minimal risk**
 3. Having a way to **track our code** and achieve **reproducible** results
@@ -100,11 +100,11 @@ For our ensemble model, we preprocessed our original data in 2 different ways, f
 
 ### `Config` and other constants
 
-This contains the different configurations that we'd use throughout our code. This would include things like the model parameters, seed number, and features to perform selective feature engineering, among others.
+This contains the different configurations that used throughout our code. This includes things like the model parameters, seed number, and features to perform selective feature engineering, among others.
 
 ### `Model`
 
-These are the classes that contain the implementation of ML models
+These are the classes that contain the implementation of ML(tree-booster) models
 that we used in achieving our score. These models are wrapped in the classes:
 - `LGBModel` - which contains the implementation of the [lightGBM](https://lightgbm.readthedocs.io/en/latest/) that is used as our base model
 - `CatBoostModel` - which contains the implementation of the [CatBoost](https://catboost.ai/) model that is stacked on top of the base model
@@ -116,4 +116,6 @@ Details about these classes are explained in our `mlod` package.
 
 ## Issues with our code:
 
-Any issues regarding notebook running failure or our code, feel free to add an issue to this github repo :)
+Feel free to add any issue regarding the notebook or code to this github repo 
+
+Happy Coding! :)
