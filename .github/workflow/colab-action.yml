@@ -1,16 +1,16 @@
+# Adding action from
+# https://github.com/trsvchn/colab-badge-action
+
 name: Open in Colab Action
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 jobs:
   build:
-    name: Example Job
+    name: Attact colab Action Job
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/master
       - name: Colab Badge Action 
