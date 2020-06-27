@@ -58,13 +58,13 @@ Simply run the `jupyter notebook` within this directory space from the terminal 
 
 ### If running on Colab,
 
-Either upload the FinalNotebook.ipynb into Colab then connect to a runtime or Click on the "Open on Colab" badge. Then run the top most cell, which contains the scripts that sets up the needed by the notebook (except the data files, `Train.csv` and `Test.csv`)
+Either upload the FinalNotebook.ipynb into Colab then connect to a runtime or Click on the "Open on Colab" badge. Then run the top most cell, which contains the scripts that set up the needed by the notebook (except the data files, `Train.csv` and `Test.csv`)
 
 -------------
 
 After placing the files in the specified locations, run the cells under **"Run these cells only once during a session"** section.
 
-At this point, you have already set up the requirements needed to move along with the model preprocessing and training.
+At this point, you have already set up the requirements needed to move along with data preprocessing and model training.
 
 ### You are set!
 
@@ -100,7 +100,7 @@ For our ensemble model, we preprocessed our original data in 2 different ways, f
 
 ### `Config` and other constants
 
-This contains the different configurations that used throughout our code. This includes things like the model parameters, seed number, and features to perform selective feature engineering, among others.
+This contains the different configurations that are used throughout our code. This includes things like the model parameters, seed number, and features to perform selective feature engineering, among others.
 
 ### `Model`
 
