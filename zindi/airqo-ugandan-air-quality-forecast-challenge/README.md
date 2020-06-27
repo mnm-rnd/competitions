@@ -50,23 +50,6 @@ First, you'll be required to make sure that the folder structure is set as
     - FinalNotebook.ipynb
 ```
 
-### To be able to use our code
-
-Make sure that you first zip the `mlod` folder, the contents are arranged in this order.
-```
-- mlod/
-    - mlod/ 
-      + models/
-      + pipelines/
-      - __init__.py
-      - configurations.py
-      - data_utils.py
-      - file_utils.py
-      - preprocessors.py
-```
-
-If thats the case, then 
-
 ### If you are running on your local machine,
 
 ... and if the file structure is set in the stated manner, the rest of the instructions together with scripts used to initiate the project are included within the first couple of cells of the `FinalNotebook.ipynb` file. 
@@ -75,7 +58,7 @@ Simply run the `jupyter notebook` within this directory space from the terminal 
 
 ### If you are running on Colab,
 
-... upload the FinalNotebook.ipynb into Colab then connect to a runtime. There after, upload the `mlod.zip` file and the `requirements.txt` to the colab storage (usually in the left side of the browser window)
+Either upload the FinalNotebook.ipynb into Colab then connect to a runtime or Click on the "Open on Colab" badge. Then run the top most cell, which contains the scripts that sets up the needed by the notebook (except the data files, `Train.csv` and `Test.csv`)
 
 -------------
 
